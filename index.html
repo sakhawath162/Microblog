@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    p.p3 {margin: 0.0px 0.0px 12.0px 0.0px; line-height: 14.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    span.s2 {font-kerning: none; color: #ff0000; -webkit-text-stroke: 0px #ff0000}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">{% extends "layout.html" %} {% block body %}</span></p>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; line-height: 28.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Hi, {{ current_user.username }}!</b></span></h1>
+<p class="p1"><span class="s1">{% if form %}</span></p>
+<p class="p1"><span class="s1">{{ form.hidden_tag() }}</span></p>
+<p class="p3"><span class="s1">{{ form.post.label }}<br>
+{{ form.post(cols=32, rows=4) }}<br>
+{% for error in form.post.errors %} </span><span class="s2">[{{ error }}]</span><span class="s1"> {% endfor %}<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1">{{ form.submit() }}</span></p>
+<p class="p1"><span class="s1">{% endif %} {% for post in posts %}</span></p>
+<p class="p1"><span class="s1">{% include '_post.html' %}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{% endfor %}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% if prev_url %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;a href="{{ prev_url }}"&gt;Newer posts&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% if next_url %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;a href="{{ next_url }}"&gt;Older posts&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% endif %}</span></p>
+<p class="p1"><span class="s1">{% endblock %}<span class="Apple-converted-space"> </span></span></p>
+</body>
+</html>
